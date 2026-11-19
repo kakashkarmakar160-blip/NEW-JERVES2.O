@@ -38,3 +38,18 @@ Settings → CORE VIDEO CONTROL-এ video URL সেট, volume/mute, play/pause
 - Native Android notifications, contacts, phone file browsing, app control, flashlight, volume, wake word এবং full background automation-এর জন্য Android companion app ও permissions দরকার।
 - PC Control এই build-এ ইচ্ছাকৃতভাবে যোগ করা হয়নি (আগের সিদ্ধান্ত অনুযায়ী later)।
 - Gemini API Key কখনো GitHub বা browser-এ রাখবে না; Cloudflare Worker Secret-এ রাখবে। আগের screenshot-এ প্রকাশিত key revoke করে নতুন key ব্যবহার করো।
+
+
+## Workspace update (19 Nov 2026)
+- Stonic-inspired responsive three-panel Agent Workspace: Your World, central Core/Visual Hub/Agent Workspace, and right-side Voice/Agent/Notes chat.
+- Added the supplied 15-second `jarvis-core-video.mp4` as the default central Core video. Video URL and user-selected video can be controlled from Settings; selected uploads are saved in browser IndexedDB where supported.
+- Added a chat-side DIAGRAM shortcut, Mermaid diagram rendering, and sandboxed HTML preview output.
+- Added Settings controls for left/center/chat widths and video/visual/chat heights.
+- Added browser speech output after voice input, where SpeechSynthesis and Bengali voices are supported.
+- Added trailing SSE buffer handling so the final streamed AI text chunk is not silently lost.
+- Backend URL remains the Cloudflare Worker URL. Keep `GEMINI_API_KEY` only as a Cloudflare Worker Secret; never put it in this ZIP or GitHub.
+
+### Important limitations
+- Browser speech, GPS, autoplay and file storage depend on browser permissions/device support. For full Android background wake-word, notification access, contacts, file browsing and hardware controls, the native Android companion still needs to be installed and granted the relevant permissions.
+- The visible Planner/Researcher/Builder/Reviewer cards show the coordinated workflow stages of the single configured AI backend; they are not four independently hosted AI services.
+- The AI backend needs a valid Gemini API key and available quota. No unlimited free usage is promised.
