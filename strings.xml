@@ -1,3 +1,1 @@
-<resources>
-    <string name="app_name">JARVIS Bridge</string>
-</resources>
+<resources><string name="acc_desc">JARVIS voice commands: scroll, tap Send, go back</string></resources>
